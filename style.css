@@ -1,0 +1,28 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap');
+
+html{
+    font-family: 'Roboto', sans-serif;
+    background-color: aquamarine;
+}
+body{
+    padding: 1%;
+    margin: 10px;
+}
+#listOfMovies{
+    padding: 10px;
+    border-radius: 2em;
+    background-color: black;
+}
+#moviePoster{
+   
+}
+li{
+    list-style-type: none;
+    scroll-behavior: smooth;
+    cursor: pointer;
+}
+li:hover{
+    background-color: black;
+    color: whitesmoke;
+}

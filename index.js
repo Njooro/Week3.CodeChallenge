@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function (){
     
     const placeMovie = () => {
@@ -27,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function (){
 
                 tickets--
 
-                // const ticketRemaining = tickets-1
+                
 
                 if(tickets <= 0){
                     const frstMovie = document.getElementById("1")
@@ -56,12 +55,51 @@ function showMovieDetails(){
             let item = filmData[i];
             console.log(item)
             const movieList = document.createElement("li");
+           
             const list = document.getElementById("showingMovie");
             movieList.classList.add("list-item", "border", "border-info", "sinema" );
             movieList.setAttribute('id', `${item.id}`);
             movieList.innerText = item.title;
             console.log(item.title);
             list.appendChild(movieList);
+
+            movieList.addEventListener('click', () => {
+                const filmImage = document.getElementById("poster");
+                const movieTitle = document.getElementById("movieTitle");
+                const filmTitle = document.getElementById("filmTitle");
+                const filmDescription = document.getElementById("movieDescription");
+                const runTime = document.getElementById("runTime");
+                const showTime = document.getElementById("showTime");
+                const availableTickets = document.getElementById("ticketsAvailable");
+
+                filmImage.src = item.poster;
+                filmTitle.innerText = item.title;
+                movieTitle.innerText = item.title;
+                filmDescription.innerText = item.description;
+                runTime.innerHTML = `Runtime:<span>${item.runtime}</span>`;
+                showTime.innerText =`Showtime: ${item.showtime}`
+                availableTickets.innerText =`Tickets available: (${item.capacity - item.tickets_sold})`
+
+                const ticketsBuy = document.getElementById("buyTicket")
+                let ticket = Number(item.capacity - item.tickets_sold);
+
+
+                ticketsBuy.addEventListener('click',()=>{
+
+                    
+                    ticket --
+                    if(ticket <= 0){
+                        movieList.innerHTML =`${item.title} <span class="badge bg-danger">SOLD OUT</span>`
+
+                        availableTickets.innerHTML = `Tickets available: <span class="badge bg-danger">SOLD OUT</span>`
+
+                    }else{
+
+                        availableTickets.innerText = `Tickets available: (${ticket})`
+                    }
+                })
+
+            })
         }
     })
 }
