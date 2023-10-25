@@ -14,9 +14,7 @@ body{
     border-radius: 2em;
     background-color: black;
 }
-#moviePoster{
-   
-}
+
 li{
     list-style-type: none;
     scroll-behavior: smooth;
@@ -25,4 +23,9 @@ li{
 li:hover{
     background-color: black;
     color: whitesmoke;
+}
+#buyTicket{
+    color: white;
+    font-size: 15px;
+    border-radius: 5px;
 }
