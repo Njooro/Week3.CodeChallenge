@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function (){
     
     const placeMovie = () => {
-        fetch("http://localhost:3000/films")
+        fetch("https://my-json-server.typicode.com/Njooro/Week3.CodeChallenge/films")
         .then(res => res.json())
         .then(data =>{
            console.log(data)
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function (){
         
     }
 function showMovieDetails(){
-    fetch('http://localhost:3000/films')
+    fetch('https://my-json-server.typicode.com/Njooro/Week3.CodeChallenge/films')
     .then(data => data.json())
     .then(response =>{
         filmData = [...response];
